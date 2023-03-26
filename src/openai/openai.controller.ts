@@ -8,6 +8,10 @@ export class OpenAIController {
 
   @Post()
   getModelAnswer(@Body() data: getAIModelAnswer) {
-    return this.openAIService.getModelAnswer(data.question);
+    return this.openAIService.getModelAnswer(
+      data.question,
+      data.favorite_sports,
+      data.disease,
+    );
   }
 }

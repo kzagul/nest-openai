@@ -16,10 +16,20 @@ export class OpenAIService {
     this.openAIApi = new OpenAIApi(configuration);
   }
 
-  public async getModelAnswer(question: string, temperature?: number) {
+  public async getModelAnswer(
+    question: string,
+    favorite_sports: string,
+    disease: string,
+    temperature?: number,
+  ) {
     try {
       const params: CreateCompletionRequest = {
-        prompt: question,
+        prompt: `
+          Suggest only three types of sport for person. 
+          Basing that he/she has next favorite sports: ${favorite_sports}.
+          Person has next disease: ${disease}
+        `,
+
         model: OPEN_AI_MODEL,
         temperature:
           temperature != undefined ? temperature : DEFAULT_TEMPERATURE,
