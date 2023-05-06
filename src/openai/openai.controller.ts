@@ -12,6 +12,7 @@ export class OpenAIController {
       data.question,
       data.favorite_sports,
       data.disease,
+      data.accessibleSports,
     );
   }
 }
