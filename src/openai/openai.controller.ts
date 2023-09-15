@@ -9,9 +9,14 @@ export class OpenAIController {
   @Post()
   getModelAnswer(@Body() data: getAIModelAnswer) {
     return this.openAIService.getModelAnswer(
-      data.question,
+      data.free_time,
       data.favorite_sports,
+      data.physical_activity,
+      data.wishes,
       data.disease,
+      data.age,
+      data.gender,
+      data.accessible_sports,
     );
   }
 }
